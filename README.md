@@ -62,3 +62,5 @@ ab -n 5000 -c 1000 http://localhost:8080/
 ## UML диаграмма
 
 https://www.dumels.com/
+
+![image](https://github.com/user-attachments/assets/aed1661e-8062-42bc-86b2-1271d8755ae1)
