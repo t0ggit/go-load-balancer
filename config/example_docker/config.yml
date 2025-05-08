@@ -1,0 +1,8 @@
+env: "local" # local - текстовые логи, prod - JSON логи
+addr: "0.0.0.0"
+port: "8080" # Порт для входящих запросов
+
+backends:
+  - url: "http://backend1:80"
+  - url: "http://backend2:80"
+  - url: "http://backend3:80"

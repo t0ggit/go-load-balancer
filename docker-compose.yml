@@ -1,0 +1,29 @@
+services:
+    load-balancer:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      ports:
+          - "8080:8080"
+      environment:
+          CONFIG_PATH: /etc/load-balancer/config.yml
+      volumes:
+          - ./config/example_docker/config.yml:/etc/load-balancer/config.yml
+
+    backend1:
+      image: nginx:stable-alpine3.21
+      volumes:
+        - ./config/example_docker/html/1:/usr/share/nginx/html:ro
+        - ./config/example_docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+    backend2:
+      image: nginx:stable-alpine3.21
+      volumes:
+        - ./config/example_docker/html/2:/usr/share/nginx/html:ro
+        - ./config/example_docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+    backend3:
+      image: nginx:stable-alpine3.21
+      volumes:
+        - ./config/example_docker/html/3:/usr/share/nginx/html:ro
+        - ./config/example_docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
