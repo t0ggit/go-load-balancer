@@ -80,4 +80,7 @@ ab -n 120 -c 1 -H "Authorization: test_api_key1" http://localhost:8080/ | grep r
 
 https://www.dumels.com/
 
-![image](https://github.com/user-attachments/assets/aed1661e-8062-42bc-86b2-1271d8755ae1)
+https://www.dumels.com/diagram/24cb21ef-c90c-4266-ab87-342b9d20ec4c
+
+![image](https://github.com/user-attachments/assets/ee2130a5-07b8-4744-9f38-6b21212128f1)
+
