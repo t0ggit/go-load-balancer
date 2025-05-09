@@ -1,8 +1,20 @@
 env: "local" # local - текстовые логи, prod - JSON логи
-addr: "localhost"
-port: "8080" # Порт для входящих запросов
+host: "localhost:8080" # Для входящих запросов
 
 backends:
   - url: "http://localhost:8081"
   - url: "http://localhost:8082"
   - url: "http://localhost:8083"
+
+rate_limiter:
+  default_bucket_capacity: 30
+  default_refill: 1
+  default_refill_interval: 2s
+  bucket_settings_database:
+    host: "localhost"
+    port: "5432"
+    user: "postgres"
+    database: "postgres"
+    password: "postgres"
+  api:
+    host: "localhost:9090"
